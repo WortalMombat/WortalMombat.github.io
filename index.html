@@ -24,9 +24,10 @@
     });
   Stamen_Toner.addTo(mymap);
 
-  //A marker
+  //A marker, with pop up
   var marker_test = L.marker([43.642707, -79.387202]);
   marker_test.addTo(mymap);
+  marker_test.bindPopup("<b>CN-Tower</b><br>Toronto's top sight").openPopup();
    </script>
 </body>
 </html>
