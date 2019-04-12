@@ -1,0 +1,11 @@
+{
+"type": "FeatureCollection",
+"name": "sightsincanada_v2_EPSG3857",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::3857" } },
+"features": [
+{ "type": "Feature", "properties": { "id": 1, "name": "CN Tower", "info": "Toronto's top sight", "lat": null, "lon": null, "visited": null, "photo": null }, "geometry": { "type": "Point", "coordinates": [ -8837336.452749997377396, 5410292.458368917927146 ] } },
+{ "type": "Feature", "properties": { "id": 2, "name": "Toronto Airport", "info": "Arrival", "lat": null, "lon": null, "visited": null, "photo": null }, "geometry": { "type": "Point", "coordinates": [ -8838318.731574082747102, 5408611.45745803322643 ] } },
+{ "type": "Feature", "properties": { "id": 3, "name": "Royal Ontario Museum", "info": "An important museum", "lat": null, "lon": null, "visited": null, "photo": null }, "geometry": { "type": "Point", "coordinates": [ -8838194.301613420248032, 5414197.644826663658023 ] } },
+{ "type": "Feature", "properties": { "id": 4, "name": "Distillery District", "info": "Booze", "lat": null, "lon": null, "visited": null, "photo": null }, "geometry": { "type": "Point", "coordinates": [ -8834305.865342687815428, 5411512.829136962071061 ] } }
+]
+}
