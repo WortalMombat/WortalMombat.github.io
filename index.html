@@ -11,8 +11,7 @@
 </head>
 <body>
     <div id="mapid"></div>
-    <script src="sightsincanada_v2_EPSG4326.geojson" type="text/javascript"></script>
-   <script>
+    <script>
    var mymap = L.map('mapid').setView([43.654234, -79.380088], 13);
 
    //Base map
@@ -31,8 +30,9 @@
   marker_test.bindPopup("<b>CN-Tower</b><br>Toronto's top sight").openPopup();
 
   //Add a feature collection to the mapid
-  var jsonfile = L.geoJson(sightsincanada_v2_EPSG4326);
-  jsonfile.addTo(mymap);
+  var sights = new L.geoJson(sightsincanada, {
+        //some options
+    }).addTo(mymap);
    </script>
 </body>
 </html>
