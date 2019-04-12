@@ -5,6 +5,7 @@
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
     integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==" crossorigin=""/>
   <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js" integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg==" crossorigin=""></script>
+  <script src="sightsincanada_v2_EPSG4326.geojson" type="text/javascript"></script>
   <style>
     #mapid {width: 1000px; height: 500px;}
   </style>
@@ -30,9 +31,7 @@
   marker_test.bindPopup("<b>CN-Tower</b><br>Toronto's top sight").openPopup();
 
   //Add a feature collection to the mapid
-  $.getJSON("sightsincanada_v2_EPSG4326.geojson",function(data){
-    L.geoJson(data).addTo(mymap);
-    });
+  L.geoJson(sightsincanada_v2_EPSG4326).addTo(mymap);
    </script>
 </body>
 </html>
