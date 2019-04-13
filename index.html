@@ -26,16 +26,12 @@
     	attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
     });
 
-
   //Map initial settings
   var mymap = L.map('mapid', {
       center: [43.654234, -79.380088],
       zoom: 13,
       layers: [Stamen_Toner]
     });
-
-    //Stamen_Toner.addTo(mymap);
-    //Esri_WorldImagery.addTo(mymap);
 
   //Give names to the layers
   var baseMaps = {
@@ -46,13 +42,12 @@
   //Layer control
   L.control.layers(baseMaps).addTo(mymap);
 
-
   //A marker, with pop up
   var marker_test = L.marker([43.642707, -79.387202]);
   marker_test.addTo(mymap);
   marker_test.bindPopup("<b>CN-Tower</b><br>Toronto's top sight").openPopup();
 
-  //Add GeoJson to the map (JQuery), add pop ups
+  //Add GeoJson to the map (JQuery), add pop ups with images
   $.getJSON("sightsincanada_v3.geojson", function(data) {
    var geojson = L.geoJson(data, {
      onEachFeature: function (feature, layer) {
@@ -62,11 +57,6 @@
    geojson.addTo(mymap);
 });
 
-  //Add GeoJson to the map (JQuery)
-  //$.getJSON("sightsincanada_v3.geojson",function(data){
-    // add GeoJSON layer to the map once the file is loaded
-  //  L.geoJson(data).addTo(mymap);
-  //});
    </script>
 </body>
 </html>
