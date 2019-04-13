@@ -5,13 +5,14 @@
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
     integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==" crossorigin=""/>
   <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js" integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg==" crossorigin=""></script>
+  <script src="https://raw.githubusercontent.com/calvinmetcalf/leaflet-ajax/master/dist/leaflet.ajax.min.js"></script>
     <style>
     #mapid {width: 1000px; height: 500px;}
   </style>
 </head>
 <body>
     <div id="mapid" style="margin-left: auto; margin-right:auto; width: 1000px"></div>
-    <script src="sightsincanada_v2_EPSG4326.js"> // load the data source (feature collection) </script>
+    <script src="sightsincanada_v3.geojson"> // load the data source (geojson File) </script>
     <script>
 
    //Map initial settings
@@ -32,8 +33,9 @@
   marker_test.addTo(mymap);
   marker_test.bindPopup("<b>CN-Tower</b><br>Toronto's top sight").openPopup();
 
-  //Add a feature collection to the mapid
-  var sights = new L.geoJson(sightsincanada).addTo(mymap);
+  //Add GeoJson to the map
+  var geojsonLayer = new L.GeoJSON.AJAX("sightsincanada_v3.geojson");
+  geojsonLayer.addTo(mymap);
    </script>
 </body>
 </html>
