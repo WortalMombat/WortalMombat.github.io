@@ -5,9 +5,9 @@
       "type": "Feature",
       "properties": {
         "name": "CN Tower",
-        "info": "Toront's top sight",
+        "info": "Toronto's top sight",
         "visited": "2019-07-14",
-        "photo": "link"
+        "photo": "001.jpg"
       },
       "geometry": {
         "type": "Point",
@@ -21,7 +21,7 @@
       "type": "Feature",
       "properties": {
         "name": "Toronto City Hall",
-        "info": "Here the mayor siteth",
+        "info": "Here the mayor sitteth",
         "visited": "2019-07-15",
         "photo": "link"
       },
