@@ -36,7 +36,7 @@
   $.getJSON("sightsincanada_v3.geojson", function(data) {
    var geojson = L.geoJson(data, {
      onEachFeature: function (feature, layer) {
-       layer.bindPopup('<h1>'+feature.properties.name+'</h1><p>info: '+feature.properties.info+'</p>');
+       layer.bindPopup('<h1>'+feature.properties.name+'</h1><p>info: '+feature.properties.info+' visited: '+feature.properties.visited+'</p>');
      }
    });
    geojson.addTo(mymap);
