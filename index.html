@@ -7,15 +7,12 @@
   <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js" integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg==" crossorigin=""></script>
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <style>
-    #mapid {width: 1500px; height: 1000px;}
+    #mapid {width: 1500px; height: 900px;}
   </style>
 </head>
 <body>
     <div id="mapid" style="margin-left: auto; margin-right:auto; width: 1000px"></div>
     <script>
-
-   //Map initial settings
-   var mymap = L.map('mapid').setView([43.654234, -79.380088], 13);
 
    //Base map
    var Stamen_Toner = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}{r}.{ext}', {
@@ -25,7 +22,28 @@
 	    maxZoom: 20,
 	    ext: 'png'
     });
-  Stamen_Toner.addTo(mymap);
+
+    var Esri_WorldImagery = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+    	attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
+    });
+
+
+  //Map initial settings
+  var mymap = L.map('mapid', {
+      center: [43.654234, -79.380088],
+      zoon: 13,
+      layers: [Stamen_Toner, Esri_WorldImagery]
+    });
+
+  //Give names to the layers
+  var baseMaps = {
+        "Grayscale": Stamen_Toner,
+        "Satellite": Esri_WorldImagery
+    };
+
+  //Layer control
+  L.control.layers(baseMaps).addTo(mymap);
+
 
   //A marker, with pop up
   var marker_test = L.marker([43.642707, -79.387202]);
