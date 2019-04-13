@@ -38,9 +38,9 @@
      onEachFeature: function (feature, layer) {
        layer.bindPopup(feature.properties.name);
      }
-   })});
-
+   });
    geojson.addTo(mymap);
+});
 
   //Add GeoJson to the map (JQuery)
   //$.getJSON("sightsincanada_v3.geojson",function(data){
