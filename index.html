@@ -35,6 +35,9 @@
       layers: [Stamen_Toner, Esri_WorldImagery]
     });
 
+    Stamen_Toner.addTo(mymap);
+    Esri_WorldImagery.addTo(mymap);
+
   //Give names to the layers
   var baseMaps = {
         "Grayscale": Stamen_Toner,
