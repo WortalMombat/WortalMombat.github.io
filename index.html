@@ -10,9 +10,11 @@
   </style>
 </head>
 <body>
-    <div id="mapid"></div>
-    <script src="sightsincanada_v2_EPSG4326.js"></script>
+    <div id="mapid" align="center"></div>
+    <script src="sightsincanada_v2_EPSG4326.js"> // load the data source (feature collection) </script>
     <script>
+
+   //Map initial settings
    var mymap = L.map('mapid').setView([43.654234, -79.380088], 13);
 
    //Base map
