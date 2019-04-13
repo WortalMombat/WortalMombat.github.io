@@ -1,7 +1,5 @@
-{
+var sightsincanada = [{
 "type": "FeatureCollection",
-"name": "sightsincanada_v2_EPSG4326",
-"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
 "features": [
 { "type": "Feature", "properties": { "id": 1, "name": "CN Tower", "info": "Toronto's top sight", "lat": null, "lon": null, "visited": null, "photo": null }, "geometry": { "type": "Point", "coordinates": [ -79.38714406411917, 43.642555711046583 ] } },
 { "type": "Feature", "properties": { "id": 2, "name": "Toronto Airport", "info": "Arrival", "lat": null, "lon": null, "visited": null, "photo": null }, "geometry": { "type": "Point", "coordinates": [ -79.395968024928592, 43.6316269614615 ] } },
@@ -9,3 +7,4 @@
 { "type": "Feature", "properties": { "id": 4, "name": "Distillery District", "info": "Booze", "lat": null, "lon": null, "visited": null, "photo": null }, "geometry": { "type": "Point", "coordinates": [ -79.359919834240713, 43.650488504569232 ] } }
 ]
 }
+];
