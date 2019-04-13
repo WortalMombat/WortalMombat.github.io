@@ -12,7 +12,6 @@
 </head>
 <body>
     <div id="mapid" style="margin-left: auto; margin-right:auto; width: 1000px"></div>
-    <script src="sightsincanada_v3.geojson"> // load the data source (geojson File) </script>
     <script>
 
    //Map initial settings
@@ -34,8 +33,10 @@
   marker_test.bindPopup("<b>CN-Tower</b><br>Toronto's top sight").openPopup();
 
   //Add GeoJson to the map
-  var geojsonLayer = new L.GeoJSON.AJAX("sightsincanada_v3.geojson");
-  geojsonLayer.addTo(mymap);
+  $.getJSON("sightsincanada_v3.geojson",function(data){
+    // add GeoJSON layer to the map once the file is loaded
+    L.geoJson(data).addTo(mymap);
+  });
    </script>
 </body>
 </html>
