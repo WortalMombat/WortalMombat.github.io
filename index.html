@@ -31,9 +31,7 @@
   marker_test.bindPopup("<b>CN-Tower</b><br>Toronto's top sight").openPopup();
 
   //Add a feature collection to the mapid
-  var sights = new L.geoJson(sightsincanada, {
-        //some options
-    }).addTo(mymap);
+  var sights = new L.geoJson(sightsincanada).addTo(mymap);
    </script>
 </body>
 </html>
