@@ -32,11 +32,21 @@
   marker_test.addTo(mymap);
   marker_test.bindPopup("<b>CN-Tower</b><br>Toronto's top sight").openPopup();
 
+  //Add GeoJson to the map (JQuery), add pop ups
+  $.getJSON("sightsincanada_v3.geojson", function(data) {
+   var geojson = L.geoJson(data, {
+     onEachFeature: function (feature, layer) {
+       layer.bindPopup(feature.properties.name);
+     }
+   })});
+
+   geojson.addTo(mymap);
+
   //Add GeoJson to the map (JQuery)
-  $.getJSON("sightsincanada_v3.geojson",function(data){
+  //$.getJSON("sightsincanada_v3.geojson",function(data){
     // add GeoJSON layer to the map once the file is loaded
-    L.geoJson(data).addTo(mymap);
-  });
+  //  L.geoJson(data).addTo(mymap);
+  //});
    </script>
 </body>
 </html>
